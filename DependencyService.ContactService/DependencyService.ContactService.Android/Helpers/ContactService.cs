@@ -10,7 +10,7 @@ using DependencyService.ContactService.Helpers;
 using Xamarin.Forms;
 using Application = Android.App.Application;
 
-[assembly: Dependency(typeof(ContactService))]
+[assembly: Xamarin.Forms.Dependency(typeof(ContactService))]
 namespace DependencyService.ContactService.Droid.Helpers
 {
     public class ContactService : IContactService

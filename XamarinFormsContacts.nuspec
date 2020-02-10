@@ -2,21 +2,21 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <!-- The identifier that must be unique within the hosting gallery -->
-    <id>Xamarin.Forms.Contacts</id>
+    <id>IvanSurzhenko.Xamarin.Forms.Contacts</id>
 
     <!-- The package version number that is used when resolving dependencies -->
-    <version>1.0.6</version>
+    <version>1.0.8</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
-    <authors>Enis Necipoğlu,sadgit ,Sumeyya Arar</authors>
+    <authors>Ivan Surzhenko, Enis Necipoğlu, sadgit ,Sumeyya Arar</authors>
 
     <!-- Owners are typically nuget.org identities that allow gallery
             users to easily find other packages by the same owners.  -->
-    <owners>Enis Necipoğlu</owners>
+    <owners>Ivan Surzhenko</owners>
 
     <!-- License and project URLs provide links for the gallery -->
-    <licenseUrl>https://github.com/enisn/Xamarin.Forms.Contacts</licenseUrl>
-    <projectUrl>https://github.com/enisn/Xamarin.Forms.Contacts</projectUrl>
+    <licenseUrl>https://github.com/isurzhenko/Xamarin.Forms.Contacts</licenseUrl>
+    <projectUrl>https://github.com/isurzhenko/Xamarin.Forms.Contacts</projectUrl>
 
     <!-- The icon is used in Visual Studio's package manager UI -->
     <iconUrl>http://enisnecipoglu.com/Plugins/Contacts.png</iconUrl>
@@ -29,7 +29,7 @@
     <releaseNotes>Return types cahanged to IEnumerable and added Func to filter contacts. Performance optimized</releaseNotes>
 
     <summary>
-      Read contacts from iOS and Android Devices
+      Read contacts from iOS and Android Devices. Forked from: https://github.com/enisn/Xamarin.Forms.Contacts/
     </summary>
     <!-- The description can be used in package manager UI. Note that the
             nuget.org gallery uses information you add in the portal. -->
@@ -51,7 +51,7 @@
     </description>
 
     <!-- Copyright information -->
-    <copyright>OpenSource on Git | Copyright ©2018 Enis Necipoglu</copyright>
+    <copyright>OpenSource on Git | Copyright ©2019 Ivan Surzhenko, Enis Necipoglu</copyright>
 
     <!-- Tags appear in the gallery and can be used for tag searches -->
     <tags>Contact,Xamarin,Xamarin Forms,Read Contact, NSContact,Contact List</tags>

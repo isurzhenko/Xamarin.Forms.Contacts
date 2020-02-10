@@ -52,6 +52,5 @@
 	<string>DependencyService.ContactService</string>
 	<key>NSContactsUsageDescription</key>
 	<string>We need contact permission to do ...</string>
-
 </dict>
 </plist>

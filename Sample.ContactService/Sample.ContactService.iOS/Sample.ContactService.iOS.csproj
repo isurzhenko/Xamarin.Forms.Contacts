@@ -119,15 +119,15 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991640" />
     <PackageReference Include="Xamarin.Forms.Contacts">
-      <Version>1.0.1</Version>
+      <Version>1.0.5</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Sample.ContactService\Sample.ContactService.csproj">
-      <Project>{645CBC86-314A-4BAE-97ED-269C47EBC5B8}</Project>
+      <Project>{A0D230FC-801C-49CB-865C-158C4D36EBC8}</Project>
       <Name>Sample.ContactService</Name>
     </ProjectReference>
   </ItemGroup>

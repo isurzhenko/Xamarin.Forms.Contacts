@@ -114,19 +114,18 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="netstandard" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991640" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\DependencyService.ContactService\DependencyService.ContactService.csproj">
-      <Project>{3FACC826-14C5-4735-842A-4E211402080E}</Project>
+      <Project>{3ADCE5DE-E5BF-461A-8E35-683F81DF83AE}</Project>
       <Name>DependencyService.ContactService</Name>
     </ProjectReference>
   </ItemGroup>

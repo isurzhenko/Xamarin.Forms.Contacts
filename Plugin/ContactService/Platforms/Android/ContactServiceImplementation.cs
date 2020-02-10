@@ -2,7 +2,11 @@
 using Android.Content;
 using Android.Database;
 using Android.Provider;
+using Android.Support.V4.App;
 using Plugin.ContactService.Shared;
+using Plugin.CurrentActivity;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -16,20 +20,54 @@ namespace Plugin.ContactService
     {
         public IEnumerable<Contact> GetContactList(Func<Contact, bool> filter = null)
         {
-            return GetContacts(filter);
-            //.ToList();
+            var task = Task.Run(async () => await GetContacts(filter));
+            task.Wait();
+            return task.Result;
         }
 
 
-        public Task<IEnumerable<Contact>> GetContactListAsync(Func<Contact, bool> filter = null) => Task.Run(() => GetContactList(filter));
+        public Task<IEnumerable<Contact>> GetContactListAsync(Func<Contact, bool> filter = null) => GetContacts(filter);
 
-        private IEnumerable<Contact> GetContacts(Func<Contact, bool> filter = null)
+        private async Task<IEnumerable<Contact>> GetContacts(Func<Contact, bool> filter = null)
         {
+            try
+            {
+                var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Contacts);
+                if (status != PermissionStatus.Granted)
+                {
+                    await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Contacts);
+
+                    var statuses = await CrossPermissions.Current.RequestPermissionsAsync(new Permission[] { Permission.Contacts });
+
+                    foreach (var st in statuses)
+                    {
+                        if (st.Key == Permission.Contacts)
+                        {
+                            status = st.Value;
+                        }
+                    }
+                }
+
+                if (status == PermissionStatus.Granted)
+                {
+                    //Query permission
+                }
+                else if (status != PermissionStatus.Unknown)
+                {
+                    //location denied
+                }
+            }
+            catch (Exception ex)
+            {
+                //Something went wrong
+            }
             var uri = ContactsContract.Contacts.ContentUri;
-            //var ctx = Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity;
+
             var ctx = Application.Context;
             var cursor = ctx.ApplicationContext.ContentResolver.Query(uri, null, null, null, null);
-            if (cursor.Count == 0) yield break;
+            if (cursor.Count == 0) return new List<Contact>();
+
+            List<Contact> result = new List<Contact>();
 
             while (cursor.MoveToNext())
             {
@@ -39,8 +77,12 @@ namespace Plugin.ContactService
                     continue;
 
                 if (!string.IsNullOrWhiteSpace(contact.Name))
-                    yield return contact;
+                    result.Add(contact);
             }
+
+            cursor.Close();
+
+            return result;
         }
 
         private static Contact CreateContact(ICursor cursor, Context ctx)

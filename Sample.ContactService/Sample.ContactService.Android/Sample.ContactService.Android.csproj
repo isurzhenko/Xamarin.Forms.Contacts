@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -47,14 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
-    <PackageReference Include="Xamarin.Android.Support.Design" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.v4" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="25.4.0.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991640" />
+    <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Forms.Contacts">
-      <Version>1.0.1</Version>
+      <Version>1.0.5</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -84,7 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sample.ContactService\Sample.ContactService.csproj">
-      <Project>{645CBC86-314A-4BAE-97ED-269C47EBC5B8}</Project>
+      <Project>{A0D230FC-801C-49CB-865C-158C4D36EBC8}</Project>
       <Name>Sample.ContactService</Name>
     </ProjectReference>
   </ItemGroup>
