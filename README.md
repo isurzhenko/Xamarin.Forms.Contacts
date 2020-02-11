@@ -1,4 +1,4 @@
-# Xamarin.Forms.Contacts
+# IvanSurzhenko.Xamarin.Forms.Contacts
 Read Contacts Data on iOS and Android
 
 <a href="https://www.nuget.org/packages/Xamarin.Forms.Contacts/">
