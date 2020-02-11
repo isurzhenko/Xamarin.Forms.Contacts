@@ -2,7 +2,7 @@
 Read Contacts Data on iOS and Android
 
 <a href="https://www.nuget.org/packages/Xamarin.Forms.Contacts/">
-<img src="https://img.shields.io/badge/Nuget-1.0.6-blue.svg">
+<img src="https://img.shields.io/badge/Nuget-1.0.7-blue.svg">
 </a>
 
 Easy usage in Portable Project:
