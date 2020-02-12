@@ -30,8 +30,10 @@ You can use filter like that:
 var contacts = await Plugin.ContactService.CrossContactService.Current.GetContactListAsync(x=>x.Emails.Count > 0);
 ```
 
-
-DO NOT FORGET ADD THIS PERMISSIONS:
+# DEPENDENCIES
+This package is depdended to Plugin.Permissions. Don't forget to add it and make the right setup
+https://github.com/jamesmontemagno/PermissionsPlugin
+      
 
 # ANDROID
 ```
