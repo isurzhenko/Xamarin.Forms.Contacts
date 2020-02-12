@@ -90,7 +90,7 @@ namespace Plugin.ContactService
             var contactId = GetString(cursor, ContactsContract.Contacts.InterfaceConsts.Id);
             //            var hasNumbers = GetString(cursor, ContactsContract.Contacts.InterfaceConsts.HasPhoneNumber) == "1";
 
-            var numbers = new List<string>(GetNumbers(ctx, contactId))
+            var numbers = new List<string>(GetNumbers(ctx, contactId));
             var emails = new List<string>(GetEmails(ctx, contactId));
 
             var contact = new Contact
