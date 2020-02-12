@@ -5,7 +5,7 @@
     <id>IvanSurzhenko.Xamarin.Forms.Contacts</id>
 
     <!-- The package version number that is used when resolving dependencies -->
-    <version>1.0.8</version>
+    <version>1.1</version>
 
     <!-- Authors contain text that appears directly on the gallery -->
     <authors>Ivan Surzhenko, Enis Necipoğlu, sadgit ,Sumeyya Arar</authors>
@@ -26,7 +26,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
     <!-- Any details about this particular release -->
-    <releaseNotes>Return types cahanged to IEnumerable and added Func to filter contacts. Performance optimized</releaseNotes>
+    <releaseNotes>Fixed crashes on Android. Fixed crashes related to the cursor closed state on Android.</releaseNotes>
 
     <summary>
       Read contacts from iOS and Android Devices. Forked from: https://github.com/enisn/Xamarin.Forms.Contacts/
@@ -38,6 +38,9 @@
       Sample:
       var contacts = await Plugin.ContactService.CrossContactService.Current.GetContactListAsync();
 
+      This package is depdended to Plugin.Permissions. Don't forget to add it and make the right setup
+      https://github.com/jamesmontemagno/PermissionsPlugin
+
       DON'T FORGET PERMISSIONS:
 
       ON ANDROID:
@@ -47,6 +50,8 @@
       into Info.plist
       &lt;key&gt;NSContactsUsageDescription&lt;/key&gt;
       &lt;string&gt;We need contact permission to do ...&lt;/string&gt;
+
+      
       
     </description>
 
