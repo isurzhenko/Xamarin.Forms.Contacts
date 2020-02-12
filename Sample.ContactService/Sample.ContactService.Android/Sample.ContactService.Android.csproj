@@ -55,6 +55,9 @@
     <PackageReference Include="Xamarin.Forms.Contacts">
       <Version>1.0.5</Version>
     </PackageReference>
+    <PackageReference Include="IvanSurzhenko.Xamarin.Forms.Contacts">
+      <Version>1.0.8</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

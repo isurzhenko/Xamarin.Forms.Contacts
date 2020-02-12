@@ -120,8 +120,8 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991640" />
-    <PackageReference Include="Xamarin.Forms.Contacts">
-      <Version>1.0.5</Version>
+    <PackageReference Include="IvanSurzhenko.Xamarin.Forms.Contacts">
+      <Version>1.0.8</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
