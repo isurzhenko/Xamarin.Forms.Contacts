@@ -1,8 +1,8 @@
-# Xamarin.Forms.Contacts
+# IvanSurzhenko.Xamarin.Forms.Contacts
 Read Contacts Data on iOS and Android
 
-<a href="https://www.nuget.org/packages/Xamarin.Forms.Contacts/">
-<img src="https://img.shields.io/badge/Nuget-1.0.6-blue.svg">
+<a href="https://www.nuget.org/packages/IvanSurzhenko.Xamarin.Forms.Contacts/">
+<img src="https://img.shields.io/badge/Nuget-1.2.0-blue.svg">
 </a>
 
 Easy usage in Portable Project:
@@ -30,8 +30,10 @@ You can use filter like that:
 var contacts = await Plugin.ContactService.CrossContactService.Current.GetContactListAsync(x=>x.Emails.Count > 0);
 ```
 
-
-DO NOT FORGET ADD THIS PERMISSIONS:
+# DEPENDENCIES
+This package is depdended to Plugin.Permissions. Don't forget to add it and make the right setup
+https://github.com/jamesmontemagno/PermissionsPlugin
+      
 
 # ANDROID
 ```
