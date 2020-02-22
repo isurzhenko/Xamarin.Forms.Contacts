@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Plugin.Permissions;
 
 namespace Sample.ContactService.Droid
 {
@@ -14,6 +15,7 @@ namespace Sample.ContactService.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+            Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, bundle);
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
@@ -21,6 +23,12 @@ namespace Sample.ContactService.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

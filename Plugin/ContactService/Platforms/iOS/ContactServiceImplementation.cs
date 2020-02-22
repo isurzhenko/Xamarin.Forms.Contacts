@@ -58,6 +58,8 @@ namespace Plugin.ContactService
             }
             //var contacts = new List<Contact>();
 
+            var result = new List<Contact>();
+
             foreach (var item in contactList)
             {
                 if (item.GivenName == null) continue;
@@ -67,9 +69,10 @@ namespace Plugin.ContactService
                 if (filter != null && !filter(_contact))
                     continue;
 
-                yield return _contact;
+                result.Add(_contact);
             }
-         
+
+            return result;
         }
 
         Contact CreateContact(CNContact contact)
@@ -87,18 +90,30 @@ namespace Plugin.ContactService
 
         IEnumerable<string> GetNumbers(CNContact contact)
         {
+            var result = new List<string>();
+
             foreach (var number in contact.PhoneNumbers)
             {
-                yield return number?.Value?.StringValue;
+                result.Add(number?.Value?.StringValue);
             }
+
+            return result;
         }
 
         IEnumerable<string> GetEmails(CNContact contact)
         {
+            var result = new List<string>();
             foreach (var email in contact.EmailAddresses)
             {
-                yield return email?.Value?.ToString();
+                var value = email?.Value?.ToString();
+
+                if (!String.IsNullOrEmpty(value))
+                {
+                    result.Add(value);
+                }
             }
+
+            return result;
         }
 
     }
